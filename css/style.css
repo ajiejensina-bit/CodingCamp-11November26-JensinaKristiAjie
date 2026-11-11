@@ -1,0 +1,232 @@
+/* ===== Dasar ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #2F203D;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+/* ===== Kartu ===== */
+.card {
+  background: rgb(245, 245, 245);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dua kartu berdampingan di layar besar, bertumpuk di HP */
+.row {
+  display: block;
+}
+
+@media (min-width: 700px) {
+  .row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .row .card {
+    flex: 1;
+  }
+}
+
+/* ===== Total balance ===== */
+.small-text {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+.balance {
+  margin: 5px 0 15px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  color: #7D3793;
+}
+
+/* Kalau melewati batas: kartu jadi merah */
+.over-limit {
+  background: #fdecea;
+  border: 2px solid #e74c3c;
+}
+
+.over-limit .balance {
+  color: #e74c3c;
+}
+
+.warning {
+  display: none;
+  text-align: center;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* ===== Form ===== */
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+hr {
+  margin: 20px 0 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.error {
+  display: none;
+  margin: 10px 0 0;
+  color: #e74c3c;
+  font-size: 14px;
+}
+
+/* ===== Tombol ===== */
+.btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.purple {
+  background: #7D3793;
+  color: white;
+}
+
+.gray {
+  background: #e5e5e5;
+  color: #222;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===== Daftar transaksi ===== */
+#transaction-list {
+  max-height: 300px;
+  overflow-y: auto; /* bisa di-scroll */
+  margin-top: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Transaksi yang melewati batas */
+.item.over-limit {
+  background: #fdecea;
+  border: none;
+  border-left: 4px solid #e74c3c;
+}
+
+.item-amount {
+  color: #7D3793;
+  font-weight: bold;
+}
+
+.item.over-limit .item-amount {
+  color: #e74c3c;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  color: white;
+  border-radius: 10px;
+}
+
+.empty {
+  color: #888;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ===== Ringkasan bulanan ===== */
+.month-total {
+  margin: 15px 0 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #7D3793;
+  text-align: center;
+}
+
+.month-row {
+  margin-top: 12px;
+}
+
+.month-row-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bar {
+  height: 8px;
+  margin-top: 4px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.item-date {
+  margin-top: 3px;
+  font-size: 12px;
+  color: #888;
+}

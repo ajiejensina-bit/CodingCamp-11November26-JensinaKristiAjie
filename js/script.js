@@ -7,14 +7,14 @@ const KEYS = {
 const COLORS = { Food: "rgb(234, 170, 33)", Transport: "#3498db", Fun: "#d21e1e" };
 const CATEGORIES = Object.keys(COLORS);
 
-// ---------- State ----------
+//state
 let transactions = loadJSON(KEYS.transactions, []);
 let spendingLimit = Number(localStorage.getItem(KEYS.limit)) || 0;
 let sortMode = localStorage.getItem(KEYS.sort) || "newest";
 let selectedMonth = monthKey(new Date());
 let chart = null;
 
-// ---------- Elements ----------
+//elements
 const nameInput = document.getElementById("item-name");
 const amountInput = document.getElementById("item-amount");
 const categorySelect = document.getElementById("item-category");
@@ -37,7 +37,7 @@ const monthCategories = document.getElementById("month-categories");
 const canvas = document.getElementById("chart");
 const chartEmpty = document.getElementById("chart-empty");
 
-// ---------- Helpers ----------
+//helpers
 function loadJSON(key, fallback) {
   try {
     const raw = localStorage.getItem(key);
@@ -63,7 +63,7 @@ function sumByCategory(list, category) {
   return list.filter((t) => t.category === category).reduce((sum, t) => sum + t.amount, 0);
 }
 
-// Contoh month key: "2026-11"
+//month key
 function monthKey(date) {
   return date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, "0");
 }
@@ -96,10 +96,10 @@ function getSortedTransactions() {
   if (sortMode === "category") {
     return list.sort((a, b) => a.category.localeCompare(b.category) || b.id - a.id);
   }
-  return list.sort((a, b) => b.id - a.id); // newest first
+  return list.sort((a, b) => b.id - a.id); //newest
 }
 
-// ---------- Render ----------
+//render
 function renderBalance() {
   const total = getTotal();
   totalEl.textContent = formatMoney(total);
@@ -268,7 +268,7 @@ function render() {
   renderChart();
 }
 
-// ---------- Aksi ----------
+//action
 function addTransaction() {
   const name = nameInput.value.trim();
   const amount = parseFloat(amountInput.value);
@@ -302,7 +302,7 @@ function deleteTransaction(id) {
   render();
 }
 
-// ---------- Events ----------
+//events
 addBtn.addEventListener("click", addTransaction);
 
 [nameInput, amountInput].forEach((input) => {
@@ -329,7 +329,7 @@ limitInput.addEventListener("input", () => {
   renderList();
 });
 
-// ---------- Init ----------
+//init
 sortSelect.value = sortMode;
 limitInput.value = spendingLimit > 0 ? spendingLimit : "";
 render();

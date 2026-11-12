@@ -1,4 +1,4 @@
-/*Dasar*/
+/*dasar*/
 * {
   box-sizing: border-box;
 }
@@ -26,7 +26,7 @@ h2 {
   margin-top: 0;
 }
 
-/*Kartu*/
+/*kartu*/
 .card {
   background: rgb(245, 245, 245);
   border-radius: 10px;
@@ -35,7 +35,7 @@ h2 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/*Dua kartu*/
+/*dua kartu*/
 .row {
   display: block;
 }
@@ -51,7 +51,7 @@ h2 {
   }
 }
 
-/*Total balance*/
+/*total balance*/
 .small-text {
   margin: 0;
   text-align: center;
@@ -67,7 +67,7 @@ h2 {
   color: #7D3793;
 }
 
-/*Melewati batas:kartu merah*/
+/*melewati batas:kartu merah*/
 .over-limit {
   background: #fdecea;
   border: 2px solid #e74c3c;
@@ -84,7 +84,7 @@ h2 {
   font-weight: bold;
 }
 
-/*Form*/
+/*form*/
 label {
   display: block;
   margin-top: 12px;
@@ -115,7 +115,7 @@ hr {
   font-size: 14px;
 }
 
-/*Tombol*/
+/*tombol*/
 .btn {
   width: 100%;
   margin-top: 15px;
@@ -147,7 +147,7 @@ hr {
   cursor: pointer;
 }
 
-/* ===== Daftar transaksi ===== */
+/*daftar transaksi*/
 #transaction-list {
   max-height: 300px;
   overflow-y: auto; /* bisa di-scroll */
@@ -162,7 +162,7 @@ hr {
   border-bottom: 1px solid #eee;
 }
 
-/* Transaksi yang melewati batas */
+/*transaksi lewati batas*/
 .item.over-limit {
   background: #fdecea;
   border: none;
@@ -192,7 +192,7 @@ hr {
   padding: 20px 0;
 }
 
-/* ===== Ringkasan bulanan ===== */
+/*ringkasan bulanan*/
 .month-total {
   margin: 15px 0 0;
   font-size: 28px;
